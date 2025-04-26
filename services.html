@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christina X – Services</title>
+
+    <!-- same CSS order as index.html -->
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <!-- ===== SITE HEADER ===== -->
+  <header class="site-header header-container">
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <img
+        src="assets/c-logo-white.png"
+        alt="Buse Agency Logo"
+        class="nav-logo"
+      />
+    </a>
+
+    <!-- Nav links -->
+    <nav class="main-nav">
+      <ul class="nav-list">
+        <li><a href="home-search.html">Home Search</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Connect</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile menu toggle -->
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
+  </header>
+
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <section class="services section-padding">
+      <div class="container">
+        <p class="section-subtitle">What I Offer</p>
+        <h2 class="section-title">Services</h2>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Buy</h3>
+            <p>
+              I’ll guide you through every step of finding and purchasing your
+              dream home, negotiating the best price and terms.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Sell</h3>
+            <p>
+              From staging to closing, I’ll market your property aggressively
+              and negotiate on your behalf to maximize your return.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Rent</h3>
+            <p>
+              Need a tenant? I’ll handle listing, showings and lease
+              negotiations—so you can rent with confidence.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Mortgage</h3>
+            <p>
+              I’ll connect you with trusted lenders and walk you through
+              mortgage options to secure the best rates.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER INCLUDE ===== -->
+    <div id="shared-footer"></div>
+    <script>
+      fetch("footer.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("shared-footer").innerHTML = html;
+          const yearEl = document.getElementById("current-year");
+          if (yearEl) yearEl.textContent = new Date().getFullYear();
+        })
+        .catch((err) => console.error("Footer load error:", err));
+    </script>
+  </body>
+</html>
