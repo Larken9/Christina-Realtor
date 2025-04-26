@@ -105,7 +105,7 @@ ol {
 .hero-parallax {
   position: relative;
   height: 80vh;
-  background-image: url("/assets/Real-Estate.png"); /* ← point here to your image */
+  background-image: url("../assets/Real-Estate.png"); /* ← point here to your image */
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
