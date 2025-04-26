@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buse Agency – Real Estate</title>
+
+    <!-- 1) Global styles first, then page overrides -->
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body>
+    <!-- ===== SITE HEADER ===== -->
+    <header class="site-header header-container">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img
+          src="assets/c-logo-white.png"
+          alt="Buse Agency Logo"
+          class="nav-logo"
+        />
+      </a>
+
+      <!-- Nav links -->
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="home-search.html">Home Search</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Connect</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile menu toggle -->
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+    </header>
+
+    <!-- ===== FULL-BLEED HERO SECTION ===== -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="hero-logo">
+          <img src="assets/c-logo-white.png" alt="Buse Agency Logo" />
+        </div>
+        <a href="#" class="btn btn-primary">Search All Properties</a>
+      </div>
+    </section>
+
+    <!-- ===== FEATURED PROPERTIES ===== -->
+    <section id="featured-properties">
+      <div class="container">
+        <p class="section-subtitle">Browse through my listings</p>
+        <h2 class="section-title">Featured Properties</h2>
+
+        <div class="property-nav">
+          <a href="#" class="prev">Previous</a>
+          <span class="divider">|</span>
+          <a href="#" class="next">Next</a>
+        </div>
+
+        <div class="properties-grid">
+          <!-- Property Card 1 -->
+          <article class="property-card">
+            <div class="property-image">
+              <img src="assets/Real-Estate.png" alt="291 Arbel Way" />
+              <span class="status-badge">For Sale</span>
+            </div>
+            <div class="property-details">
+              <h3>291 Arbel Way</h3>
+              <p>291 Arbel Way, Bellingham, WA 98229</p>
+              <p>0.91 Acres</p>
+              <p class="price">$5,800,000</p>
+            </div>
+          </article>
+
+          <!-- Property Card 2 -->
+          <article class="property-card">
+            <div class="property-image">
+              <img src="assets/Real-Estate.png" alt="251 Arbel Way" />
+              <span class="status-badge">For Sale</span>
+            </div>
+            <div class="property-details">
+              <h3>251 Arbel Way</h3>
+              <p>251 Arbel Way, Bellingham, WA 98229</p>
+              <p>1.49 Acres</p>
+              <p class="price">$4,400,000</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT / HERO CARD ===== -->
+    <section class="hero-section">
+      <div
+        class="hero-image"
+        style="background-image: url('assets/realtor-hero.png')"
+      ></div>
+      <div class="hero-card">
+        <p class="pre">GET TO KNOW</p>
+        <h2 class="title">Christina</h2>
+        <p class="copy">
+          Our clients trust our upfront approach and value our input when
+          addressing all aspects of a transaction. We strive to negotiate the
+          best terms for our clients. When met with a tough challenge we are
+          creative, strategic, and skillful in working through issues.
+        </p>
+        <div class="buttons">
+          <a href="#learn" class="btn-outline">Learn More</a>
+          <a href="#inquire" class="btn-primary">Inquire Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIAL ===== -->
+    <section class="testimonial section-padding text-center">
+      <div class="container">
+        <blockquote>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+          posuere erat a ante. Duis cursus, mi quis viverra ornare.
+        </blockquote>
+        <cite>- Highly Recommended Client</cite>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER INCLUDE ===== -->
+    <div id="shared-footer"></div>
+
+    <script>
+      fetch("footer.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("shared-footer").innerHTML = html;
+          const yearEl = document.getElementById("current-year");
+          if (yearEl) yearEl.textContent = new Date().getFullYear();
+        })
+        .catch((err) => console.error("Footer load error:", err));
+    </script>
+  </body>
+</html>

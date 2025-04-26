@@ -1,0 +1,290 @@
+/* make header stick, reuse your existing header styles */
+.site-header {
+  position: relative;
+}
+
+/* Filters bar */
+.search-filters {
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+.filters-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Two-column layout */
+.search-main {
+  display: flex;
+  height: calc(100vh - /* header + filters height */ 120px);
+}
+/* Sidebar for results */
+.results-panel {
+  width: 35%;
+  overflow-y: auto;
+  border-right: 1px solid #eee;
+  background: #fafafa;
+}
+/* Map fills remaining space */
+#map {
+  flex: 1;
+}
+
+/* Individual result card */
+.property-card {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.property-card:hover {
+  background: #f0f0f0;
+}
+.property-card h4 {
+  margin-bottom: 0.5rem;
+}
+/* adjust scrollbar if you like */
+
+/* ─── Home-Search Header (copy of index header with off-white BG) ─── */
+.site-header.header-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #faf9f2; /* off-white */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+/* Logo */
+.site-header .logo {
+  flex-shrink: 0;
+}
+.site-header .nav-logo {
+  width: 160px; /* tweak size */
+  height: auto;
+}
+
+/* === General Styles (Keep relevant ones from your original) === */
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+:root {
+  --primary-color: #007bff;
+}
+
+/* === Sticky Header === */
+.site-header.header-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #faf9f2;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Start with tighter padding */
+  padding: 1rem 1.5rem;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* === Logo === */
+.site-header .logo {
+  flex-shrink: 0;
+  margin-right: 1rem; /* Space between logo and nav */
+}
+
+.site-header .nav-logo {
+  width: 160px; /* Adjust if needed */
+  height: auto;
+  display: block;
+}
+
+/* === Navigation Container === */
+.site-header .main-nav {
+  /* No overflow or min-width needed now */
+  margin-left: auto; /* Push to the right */
+}
+
+/* === Navigation List === */
+.site-header .nav-list {
+  list-style: none;
+  display: flex;
+  /* --- ADJUST THIS GAP --- */
+  gap: 1.25rem; /* Reduced gap (try values like 1rem, 1.25rem, 1.5rem) */
+  margin: 0;
+  padding: 0;
+  white-space: nowrap; /* Keep items on one line */
+  align-items: center;
+}
+
+/* === Navigation Links === */
+.site-header .nav-list a {
+  color: #333;
+  text-transform: uppercase;
+  /* --- ADJUST FONT/LETTER SPACING IF NEEDED --- */
+  font-size: 0.875rem; /* Or try 0.8rem */
+  letter-spacing: 0.05em; /* Or try 0.025em or remove */
+  text-decoration: none;
+  transition: color 0.2s;
+  display: block;
+}
+
+.site-header .nav-list a:hover {
+  color: var(--primary-color);
+}
+
+/* === Optional Wider Screen Padding (Adjust if needed) === */
+@media (min-width: 1024px) {
+  .site-header.header-container {
+    /* --- ADJUST PADDING FOR WIDE SCREENS --- */
+    padding-left: 2rem; /* Reduced from 3rem */
+    padding-right: 2rem; /* Reduced from 3rem */
+  }
+  .site-header .nav-list {
+    /* Optionally slightly increase gap on wider screens if space allows */
+    /* gap: 1.5rem; */
+  }
+}
+
+/* === Mobile Toggle Button (Keep as is) === */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: 1rem;
+}
+.nav-toggle .hamburger,
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: #333;
+  display: block;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+.nav-toggle .hamburger {
+  position: relative;
+}
+.nav-toggle .hamburger::before {
+  top: -8px;
+}
+.nav-toggle .hamburger::after {
+  top: 8px;
+}
+
+/* === Mobile Menu Styles (Keep as is) === */
+@media (max-width: 768px) {
+  .site-header .main-nav {
+    /* Styles to hide desktop nav list container are not strictly needed
+          when not using overflow, but keep for consistency if preferred */
+    flex: 0 0 auto;
+    min-width: auto;
+  }
+
+  .site-header .nav-list {
+    display: none; /* Hide the list itself */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: rgba(250, 249, 242, 0.95);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem 0;
+    gap: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #eee;
+    white-space: normal; /* Allow wrapping in mobile dropdown */
+  }
+
+  .site-header .nav-list.mobile-active {
+    display: flex;
+  }
+
+  .site-header .nav-list li {
+    border-bottom: 1px solid #eee;
+  }
+  .site-header .nav-list li:last-child {
+    border-bottom: none;
+  }
+  .site-header .nav-list a {
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+  }
+  .nav-toggle {
+    display: block;
+  }
+}
+
+/* === Other styles from your original CSS (Filters, Search, Map, etc.) === */
+/* ... (keep these styles as they were, ensuring height calculations are correct) ... */
+
+/* Filters bar */
+.search-filters {
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  /* position: sticky; */ /* Optional */
+  /* top: 60px; */ /* Adjust if header height changes */
+  /* z-index: 999; */
+}
+.filters-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 1rem 1.5rem; /* Match header padding */
+}
+@media (min-width: 1024px) {
+  .filters-container {
+    padding-left: 2rem; /* Match header padding */
+    padding-right: 2rem;
+  }
+}
+
+/* Two-column layout */
+.search-main {
+  display: flex;
+  /* Ensure height calculation accounts for actual header height */
+  height: calc(
+    100vh - /* header height */ 60px - /* filter height */ 50px
+  ); /* Example */
+}
+/* Sidebar for results */
+.results-panel {
+  width: 35%;
+  overflow-y: auto;
+  border-right: 1px solid #eee;
+  background: #fafafa;
+}
+/* Map fills remaining space */
+#map {
+  flex: 1;
+}
+
+/* Individual result card */
+.property-card {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.property-card:hover {
+  background: #f0f0f0;
+}
+.property-card h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}

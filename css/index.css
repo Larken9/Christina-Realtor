@@ -1,0 +1,706 @@
+/* css/index.css */
+
+/* Basic Reset & Global Styles */
+:root {
+  --primary-color: #d95f26;
+  --dark-grey: #333;
+  --light-grey: #f4f4f4;
+  --text-color: #555;
+  --heading-font: "Arial", sans-serif;
+  --body-font: "Arial", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body-font);
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  color: var(--dark-grey);
+  margin-bottom: 0.8em;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-padding {
+  padding: 60px 0;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #c0501f;
+}
+/* ensure no default page padding/margins are interfering */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* FULL-BLEED HERO */
+.hero {
+  position: relative;
+  width: 100vw; /* full viewport width */
+  height: 100vh; /* full viewport height */
+  overflow: hidden;
+}
+
+/* background layer */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/realtor-hero.png") center/cover no-repeat;
+  /* if you need an overlay: */
+  /* background-color: rgba(0,0,0,0.3); */
+}
+
+/* content inside hero */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem; /* optional side padding for content */
+}
+
+/* logo sizing */
+.hero-logo img {
+  width: 180px; /* adjust as needed */
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+/* CTA button sits over hero */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* remove background & placeholder styles */
+.hero-logo {
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* size the image */
+.hero-logo img {
+  display: inline-block;
+  width: 180px; /* adjust as needed */
+  height: auto;
+}
+
+/* nav logo sizing */
+.nav-logo {
+  width: 120px; /* adjust for your nav */
+  height: auto;
+}
+
+/* Experts Section */
+.experts-intro {
+  margin-top: 30px;
+  color: #888;
+}
+
+/* Agency Section */
+.agency-section {
+  background-color: var(--light-grey);
+}
+.agency-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+.agency-image img {
+  border: 1px solid #eee;
+}
+.agency-content h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+.agency-content p {
+  margin-bottom: 20px;
+}
+
+/* Testimonial Section */
+.testimonial blockquote {
+  font-size: 1.4em;
+  font-style: italic;
+  color: var(--dark-grey);
+  max-width: 700px;
+  margin: 0 auto 20px;
+  position: relative;
+  padding-left: 40px;
+}
+.testimonial blockquote::before {
+  content: '"';
+  font-size: 3em;
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  top: -10px;
+}
+.testimonial cite {
+  display: block;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Three Column Section */
+.three-col-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.col-item {
+  background-color: var(--dark-grey);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+.col-item h3 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+/* Behind the Brand */
+.behind-brand-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.brand-image-placeholder {
+  height: 200px;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+}
+
+/* Recent Properties Section */
+.properties-section {
+  background-color: #000;
+  color: #fff;
+  position: relative;
+}
+.properties-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+}
+.properties-logo {
+  width: 150px;
+  height: 150px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 1.3;
+}
+.property-details h4 {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+/* Slider Arrows */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 1.5em;
+  z-index: 10;
+}
+.slider-arrow.prev {
+  left: 20px;
+}
+.slider-arrow.next {
+  right: 20px;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--light-grey);
+  padding: 40px 0 20px;
+  border-top: 1px solid #ddd;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.footer-col h4 {
+  margin-bottom: 15px;
+  color: var(--dark-grey);
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+.footer-col ul li a {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+.footer-col ul li a:hover {
+  color: var(--primary-color);
+}
+.footer-social a {
+  margin-right: 10px;
+  color: var(--dark-grey);
+  font-size: 1.4em;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  font-size: 0.9em;
+  color: #888;
+}
+
+/* at the top of your index.css, in the navbar section */
+
+/* Navbar container */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+}
+
+/* Flex layout: pushes logo left and nav right */
+.header-container {
+  display: flex;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 1rem;
+  align-items: center;
+  justify-content: space-between; /* ← make sure this is here */
+}
+
+/* Logo sizing */
+.logo .nav-logo {
+  width: 120px;
+  height: auto;
+}
+
+/* Nav sits in its own box */
+.main-nav {
+  /* no margin-left needed when using space-between */
+}
+
+/* Link list */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-list a {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+.nav-list a:hover {
+  color: var(--primary-color);
+}
+
+/* Mobile toggle */
+.nav-toggle {
+  display: none;
+}
+.nav-toggle .hamburger,
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+  display: block;
+}
+.nav-toggle .hamburger::before {
+  content: "";
+  top: -6px;
+}
+.nav-toggle .hamburger::after {
+  content: "";
+  top: 6px;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+/* INTO SECTION STATR */
+
+/* 1. Image covers 75% */
+.hero-image {
+  width: 75%;
+  height: 100%;
+  float: left;
+  background-size: cover;
+  background-position: center;
+}
+
+/* 2. Card overlaps at the 75% boundary */
+.hero-card {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-10%, -50%);
+  max-width: 350px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Typography & buttons (same as before) */
+.pre {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  color: #ff6600;
+  margin-bottom: 0.5rem;
+}
+.title {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+  color: #222;
+}
+.copy {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+.buttons .btn-outline,
+.buttons .btn-primary {
+  display: inline-block;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  margin-right: 0.5rem;
+}
+.btn-outline {
+  border: 2px solid #ff6600;
+  color: #ff6600;
+  background: transparent;
+}
+.btn-outline:hover {
+  background: #ff6600;
+  color: #fff;
+}
+.btn-primary {
+  background: #ff6600;
+  color: #fff;
+  border: 2px solid #ff6600;
+}
+.btn-primary:hover {
+  background: #e65500;
+  border-color: #e65500;
+}
+
+/* ========= Featured Properties Section ========= */
+#featured-properties {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.section-subtitle {
+  color: #ff6200;
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.property-nav {
+  margin-bottom: 2rem;
+}
+
+.property-nav a {
+  color: #333;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.property-nav .divider {
+  color: #bbb;
+}
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.property-card {
+  background: #f7f7f7;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.property-image {
+  position: relative;
+}
+
+.property-image img {
+  width: 100%;
+  display: block;
+}
+
+.status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #ff6200;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.property-details {
+  padding: 1.5rem 1rem;
+}
+
+.property-details h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.property-details p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.property-details .price {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.hero-parallax {
+  position: relative;
+  height: 80vh;
+  background-image: url("/assets/Real-Estate.png"); /* ← point here to your image */
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.6)
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* shrink logo a little if you need */
+/* already included before: .hero-logo { ... } */
+
+.hero-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #fff; /* white text */
+  text-decoration: underline; /* simple underline */
+  text-transform: uppercase; /* optional, matches your style */
+  letter-spacing: 0.1em; /* optional tracking */
+  background: none; /* remove any bg */
+  border: none; /* remove any border */
+  padding: 0; /* remove padding */
+}
+.hero-link:hover {
+  opacity: 0.8; /* subtle hover effect */
+}
+
+.hero-logo {
+  width: 20vw; /* scales down on smaller screens */
+  max-width: 150px; /* never larger than 150px */
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Mobile: stack */
+@media (max-width: 768px) {
+  .hero-image,
+  .hero-card {
+    position: static;
+    float: none;
+    width: 100%;
+    transform: none;
+    margin: 1rem 0;
+  }
+  .hero-section {
+    height: auto;
+  }
+}
+
+/* responsive: stack on mobile */
+@media (max-width: 768px) {
+  .intro-bg {
+    height: auto;
+  }
+  .intro-overlay {
+    position: static;
+    transform: none;
+    width: calc(100% - 2rem);
+    margin: 1.5rem auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+  .nav-list.mobile-active {
+    display: flex;
+  }
+  .nav-toggle {
+    display: block;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .agency-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .three-col-grid,
+  .behind-brand-grid {
+    grid-template-columns: 1fr;
+  }
+  .properties-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .slider-arrow {
+    display: none;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    height: 50vh;
+  }
+  h1 {
+    font-size: 1.8em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  .testimonial blockquote {
+    font-size: 1.1em;
+  }
+}

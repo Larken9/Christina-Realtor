@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Home Search</title>
+    <link rel="stylesheet" href="css/search.css" />
+    <!-- Google Maps API (replace YOUR_API_KEY) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+  </head>
+  <body>
+    <!-- home-search.html -->
+<!-- home-search.html -->
+<header class="site-header header-container">
+    <!-- Logo on left -->
+    <a href="index.html" class="logo">
+      <img src="assets/c-logo.png" alt="Buse Agency Logo" class="nav-logo" />
+    </a>
+  
+    <!-- Nav on right -->
+    <nav class="main-nav">
+      <ul class="nav-list">
+        <li><a href="home-search.html">Home Search</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Connect</a></li>
+      </ul>
+    </nav>
+  
+    <!-- Mobile toggle (optional) -->
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
+  </header>
+  
+  <!-- then immediately your filters section, not another </header> -->
+  <section class="search-filters"> … 
+  
+  
+
+      <!-- (Optional) mobile menu toggle -->
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+    </header>
+
+    <!-- Filters bar -->
+    <section class="search-filters">
+      <div class="container filters-container">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="City, neighborhood, ZIP code…"
+        />
+        <select id="status-filter">
+          <option>For sale</option>
+          <option>Sold</option>
+        </select>
+        <select id="price-filter">
+          <option>Any price</option>
+          …
+        </select>
+        <button id="apply-filters" class="btn">Search</button>
+      </div>
+    </section>
+
+    <!-- Main search area: sidebar + map -->
+    <main class="search-main">
+      <aside class="results-panel">
+        <div id="results"></div>
+      </aside>
+      <div id="map"></div>
+    </main>
+
+    <script src="js/search.js"></script>
+  </body>
+</html>
