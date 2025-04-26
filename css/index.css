@@ -113,31 +113,10 @@ body {
   padding: 0 1rem; /* optional side padding for content */
 }
 
-/* logo sizing */
-.hero-logo img {
-  width: 180px; /* adjust as needed */
-  height: auto;
-  margin-bottom: 2rem;
-}
-
 /* CTA button sits over hero */
 .btn-primary {
   background-color: var(--primary-color);
   color: #fff;
-}
-
-/* remove background & placeholder styles */
-.hero-logo {
-  z-index: 2;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-/* size the image */
-.hero-logo img {
-  display: inline-block;
-  width: 180px; /* adjust as needed */
-  height: auto;
 }
 
 /* nav logo sizing */

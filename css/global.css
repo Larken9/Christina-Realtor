@@ -39,9 +39,6 @@ a {
   text-decoration: none;
   transition: color 0.2s;
 }
-a:hover {
-  color: #0074d9;
-}
 
 /* Images */
 img {
@@ -60,26 +57,6 @@ img {
   cursor: pointer;
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
-}
-
-/* Primary & Secondary Buttons */
-.btn-primary {
-  background-color: #0074d9;
-  color: #fff;
-  border: none;
-}
-.btn-primary:hover {
-  background-color: #005fa3;
-}
-
-.btn-secondary {
-  background-color: #fff;
-  color: #0074d9;
-  border: 2px solid #0074d9;
-}
-.btn-secondary:hover {
-  background-color: #0074d9;
-  color: #fff;
 }
 
 /* Headings */
@@ -104,35 +81,6 @@ ul,
 ol {
   margin-bottom: 1rem;
   padding-left: 1.25rem;
-}
-
-/* Header & Navigation */
-.site-header {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-.site-header .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #0074d9;
-}
-.site-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-.site-nav a {
-  font-size: 0.875rem;
-  text-transform: uppercase;
-}
-
-/* make the header’s container full-bleed, with only a small side padding */
-.site-header .container {
-  max-width: 100%;
-  padding: 0 32px; /* adjust left/right spacing here */
 }
 
 /* Utility Classes */
