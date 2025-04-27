@@ -2,7 +2,7 @@
 
 /* Basic Reset & Global Styles */
 :root {
-  --primary-color: #d95f26;
+  --primary-color: #c2a66d;
   --dark-grey: #333;
   --light-grey: #f4f4f4;
   --text-color: #555;
@@ -70,9 +70,6 @@ h6 {
   font-weight: bold;
 }
 
-.btn:hover {
-  background-color: #c0501f;
-}
 /* ensure no default page padding/margins are interfering */
 html,
 body {
@@ -408,7 +405,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.9rem;
-  color: #ff6600;
+  color: #333333;
   margin-bottom: 0.5rem;
 }
 .title {
@@ -425,30 +422,36 @@ body {
 .buttons .btn-outline,
 .buttons .btn-primary {
   display: inline-block;
-  font-size: 0.95rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  font-size: 1rem; /* slightly bigger = more premium */
+  padding: 0.75rem 2rem; /* taller & wider = clean spacing */
+  border-radius: 999px; /* pill-shaped = luxury feel */
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
+  transition: all 0.3s ease; /* smooth, modern transition */
   margin-right: 0.5rem;
+  font-weight: 500; /* a little bolder, but not "bold" */
+  letter-spacing: 0.05em; /* subtle spacing = elegance */
 }
-.btn-outline {
-  border: 2px solid #ff6600;
-  color: #ff6600;
-  background: transparent;
-}
-.btn-outline:hover {
-  background: #ff6600;
-  color: #fff;
-}
+
 .btn-primary {
-  background: #ff6600;
   color: #fff;
-  border: 2px solid #ff6600;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
 }
-.btn-primary:hover {
-  background: #e65500;
-  border-color: #e65500;
+/* Primary button */
+.btn-primary {
+  background: transparent; /* no background by default */
+  color: #ffffff;
+}
+
+.btn-outline {
+  border: 2px solid #333333;
+  color: #333333;
+  background: transparent;
 }
 
 /* ========= Featured Properties Section ========= */
@@ -457,8 +460,75 @@ body {
   padding: 4rem 0;
 }
 
+.btn-primary:hover {
+  color: rgb(202, 202, 202); /* darker on hover */
+}
+
+.buttons-about {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Outline button inside buttons-about */
+.buttons-about .btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: #1a1d29;
+  border: 2px solid #1a1d29;
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.buttons-about .btn-outline:hover {
+  background: #333333;
+  color: #ffffff;
+}
+
+/* Primary button inside buttons-about */
+.buttons-about .btn-primary {
+  display: inline-block;
+  background: #1a1d29; /* Or luxury color */
+  color: #ffffff;
+  border: 2px solid #1a1d29;
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.buttons-about .btn-primary:hover {
+  background: #1a1d29;
+  border-color: #1a1d29;
+}
+
+.hero-card {
+  background: #fff;
+  padding: 2rem;
+  max-width: 400px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* align text and buttons to left */
+  gap: 1.5rem; /* space between sections */
+}
+
+.buttons-about {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
 .section-subtitle {
-  color: #ff6200;
+  color: #333333;
   font-size: 0.9rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -513,7 +583,7 @@ body {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: #ff6200;
+  background: #1a1d29;
   color: #fff;
   text-transform: uppercase;
   font-size: 0.75rem;
@@ -669,5 +739,70 @@ body {
   }
   .testimonial blockquote {
     font-size: 1.1em;
+  }
+}
+
+/* ───────────────────────────────────────────
+   HAMBURGER TOGGLE
+─────────────────────────────────────────── */
+.nav-toggle {
+  display: none; /* hide by default */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1100; /* above header */
+  position: relative;
+}
+
+/* the “three lines” */
+.nav-toggle .hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+}
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+}
+.nav-toggle .hamburger::before {
+  top: -6px;
+}
+.nav-toggle .hamburger::after {
+  top: 6px;
+}
+
+/* ───────────────────────────────────────────
+   MOBILE MENU
+─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* show toggle */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* hide the desktop links */
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 1050; /* above hero, below toggle */
+  }
+
+  /* when JS adds `.mobile-active`… */
+  .nav-list.mobile-active {
+    display: flex;
   }
 }

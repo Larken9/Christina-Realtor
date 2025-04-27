@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Buse Agency – Real Estate</title>
+    <title>Christina X – Real Estate</title>
 
     <!-- 1) Global styles first, then page overrides -->
     <link rel="stylesheet" href="css/index.css" />
@@ -109,9 +109,10 @@
           best terms for our clients. When met with a tough challenge we are
           creative, strategic, and skillful in working through issues.
         </p>
-        <div class="buttons">
+        <div class="buttons-about">
           <a href="#learn" class="btn-outline">Learn More</a>
           <a href="#inquire" class="btn-primary">Inquire Now</a>
+          <!-- fixed class -->
         </div>
       </div>
     </section>
@@ -139,6 +140,15 @@
           if (yearEl) yearEl.textContent = new Date().getFullYear();
         })
         .catch((err) => console.error("Footer load error:", err));
+    </script>
+
+    <script>
+      const toggle = document.querySelector(".nav-toggle");
+      const navList = document.querySelector(".nav-list");
+
+      toggle.addEventListener("click", () => {
+        navList.classList.toggle("mobile-active");
+      });
     </script>
   </body>
 </html>
