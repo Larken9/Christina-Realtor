@@ -63,3 +63,13 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const hero = document.querySelector(".hero-parallax");
+  window.addEventListener("scroll", () => {
+    // how far the page is scrolled
+    const scrolled = window.pageYOffset;
+    // move bg at half speed
+    hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
+  });
+</script>

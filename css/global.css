@@ -105,13 +105,12 @@ ol {
 .hero-parallax {
   position: relative;
   height: 80vh;
-  background-image: url("../assets/Real-Estate.png"); /* ← point here to your image */
-  background-attachment: fixed;
-  background-position: center;
+  overflow: hidden; /* hide any overflow */
+  background-image: url("../assets/Real-Estate.png");
+  background-position: center 0; /* start at top-center */
   background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-attachment: scroll; /* disable “fixed” */
+  will-change: background-position;
 }
 
 .hero-overlay {
